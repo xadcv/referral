@@ -52,7 +52,7 @@ led_cap = st.slider(
     "Value cap (bps) at inception", min_value=0.0, max_value=50.0, value=50.0
 )
 
-ldo_tokes = max((led_cap - led_bps) / 10000 * eth_price / ldo_price, 0)
+ldo_tokes = max((led_cap - led_bps) / 10000 * eth_referred * eth_price / ldo_price, 0)
 ldo_value = ldo_tokes * ldo_price
 new_bps = (ldo_value + led_usd) / (eth_referred * eth_price) * 10000
 bps_delta = max(new_bps - led_bps, 0)
