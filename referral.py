@@ -14,6 +14,14 @@ def human_format(num):
 
 
 st.title("Referral Simulation")
+st.write("Proposal:")
+st.write("1. Sliding index driven by cumulative ETH staking volume over the past 12mos")
+st.write(
+    "2. Target cap set to 50bps for total value locked-in at inception. If staking yields deliver > 50bps of referral bonus, no LDO is paid out. If staking yields deliver < 50bps of referral bonus, difference is paid out in LDO at spot price"
+)
+st.write(
+    "3. LDO tokens are streamed via smart contract with a 12mo vesting cliff. Total value of each referral can be multiples in excess of 50bps if LDO appreciates"
+)
 st.subheader("1: Input desired values for each of the parameters")
 
 eth_price = st.slider("ETH Price in USD", min_value=0.0, max_value=5000.0, value=1300.0)
