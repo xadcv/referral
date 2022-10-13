@@ -50,6 +50,7 @@ data["cash_bonus_bps"] = data["lido_take_bps"] * idx_take
 data["ldo_bonus_bps"] = np.maximum(ref_cap - data["cash_bonus_bps"], 0)
 data["tot_cash"] = data["cash_bonus_bps"] * eth_ref * eth_price / 10000
 data["tot_bps"] = data["ldo_bonus_bps"] + data["cash_bonus_bps"]
+data["ldo_payback"] = data["tot_bps"] / data["lido_take_bps"]
 data["tot_ldo"] = data["ldo_bonus_bps"] * eth_ref * eth_price / (ldo_price * 10000)
 data["tot_ldo_usd"] = data["tot_ldo"] * ldo_price
 data["tot_usd"] = data["tot_ldo_usd"] + data["tot_cash"]
@@ -84,7 +85,7 @@ fig1.add_trace(
     )
 )
 fig1.update_layout(
-    title="Rewards Today vs 12mos (bps)",
+    title="Rewards (bps)",
     xaxis_title="ETH Yield (%)",
     yaxis_title="bps",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
@@ -109,7 +110,7 @@ fig2.add_trace(
     )
 )
 fig2.update_layout(
-    title="Rewards (bps)",
+    title="Rewards Today vs 12mos (bps)",
     xaxis_title="ETH Yield (%)",
     yaxis_title="bps",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
@@ -161,6 +162,25 @@ fig3.update_layout(
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
 st.plotly_chart(fig3)
+
+st.subheader("Payback period")
+
+fig = go.Figure()
+fig.add_trace(
+    go.Scatter(
+        x=data["yield_pcg"],
+        y=data["ldo_payback"],
+        name="Lido Payback (yrs)",
+        line_color="rgb(0,0,0)",
+    )
+)
+fig.update_layout(
+    title="Lido Payback (yrs)",
+    xaxis_title="ETH Yield (%)",
+    yaxis_title="yrs",
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+)
+st.plotly_chart(fig)
 
 
 with st.expander("Data Table"):
