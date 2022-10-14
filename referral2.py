@@ -27,16 +27,17 @@ with st.expander("Referral floor"):
         "Referral bonus floor (bps)", min_value=0.0, format="%.2f", value=40.0
     )
 
-set1, set2, set3 = st.columns(3)
+set1, set2 = st.columns(2)
 eth_price = set1.slider(
     "ETH Price in USD", min_value=0.0, max_value=5000.0, value=1300.0
 )
-ldo_price = set2.slider(
+
+idx_take = set2.slider("Referral Value Index", min_value=1.0, max_value=2.0, value=1.5)
+
+set4, set5 = st.columns(2)
+ldo_price = set4.slider(
     "LDO Lock-in Price in (USD)", min_value=0.0, max_value=10.0, value=1.30
 )
-idx_take = set3.slider("Referral Value Index", min_value=1.0, max_value=2.0, value=1.5)
-
-set4, set5, set6 = st.columns(3)
 new_ldo_price = set5.slider(
     "LDO price in 12mos (USD)", min_value=0.0, max_value=10.0, value=1.30
 )
