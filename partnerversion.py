@@ -45,7 +45,7 @@ st.write(
 )
 
 ref_cap = 25.0
-idx_take = 1.5
+idx_take = 1.0
 
 st.subheader("Modifiers")
 
