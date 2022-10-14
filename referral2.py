@@ -24,7 +24,7 @@ st.title("Referral Simulation")
 
 with st.expander("Referral floor"):
     ref_cap = st.number_input(
-        "Referral bonus floor (bps)", min_value=0.0, format="%.2f", value=20.0
+        "Referral bonus floor (bps)", min_value=0.0, format="%.2f", value=30.0
     )
 
 set1, set2 = st.columns(2)
