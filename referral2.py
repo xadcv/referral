@@ -36,10 +36,10 @@ idx_take = set2.slider("Referral Value Index", min_value=1.0, max_value=2.0, val
 
 set4, set5 = st.columns(2)
 ldo_price = set4.slider(
-    "LDO Lock-in Price in (USD)", min_value=0.0, max_value=10.0, value=1.30
+    "LDO Lock-in Price in (USD)", min_value=0.0, max_value=100.0, value=1.30
 )
 new_ldo_price = set5.slider(
-    "LDO price in 12mos (USD)", min_value=0.0, max_value=10.0, value=1.30
+    "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=1.30
 )
 
 eth_ref = st.number_input("Number of ETH Referred", min_value=0.0, value=1.0)
