@@ -184,7 +184,7 @@ fig4.add_trace(
         x=data["yield_pcg"],
         y=data["2yearPayback"],
         name="2-Year Payback",
-        line_color="rgb(235,235,235)",
+        line_color="rgb(247,137,223)",
         line_dash="dot",
     )
 )
