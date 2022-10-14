@@ -60,6 +60,7 @@ data["tot_usd"] = data["tot_ldo_usd"] + data["tot_cash"]
 data["tot_ldo_usd12"] = data["tot_ldo"] * new_ldo_price
 data["tot_usd12"] = data["tot_ldo_usd12"] + data["tot_cash"]
 data["tot_usd12_bps"] = data["tot_usd12"] / (eth_ref * eth_price) * 10000
+data["2yearPayback"] = 2
 
 fig1 = go.Figure()
 fig1.add_trace(
@@ -169,8 +170,8 @@ lay3.plotly_chart(fig3)
 
 lay4.subheader("Payback period")
 
-fig = go.Figure()
-fig.add_trace(
+fig4 = go.Figure()
+fig4.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["ldo_payback"],
@@ -178,13 +179,22 @@ fig.add_trace(
         line_color="rgb(0,0,0)",
     )
 )
-fig.update_layout(
+fig4.add_trace(
+    go.Scatter(
+        x=data["yield_pcg"],
+        y=data["2yearPayback"],
+        name="2-Year Payback",
+        line_color="rgb(235,235,235)",
+        line_width="dot",
+    )
+)
+fig4.update_layout(
     title="Lido Payback (yrs)",
     xaxis_title="ETH Yield (%)",
     yaxis_title="yrs",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
-lay4.plotly_chart(fig)
+lay4.plotly_chart(fig4)
 
 
 with st.expander("Data Table"):
