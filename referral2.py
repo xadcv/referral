@@ -147,6 +147,14 @@ fig3.add_trace(
 fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
+        y=data["tot_ldo_usd"],
+        name="LDO Rewards Today (USD)",
+        line_color="rgb(247,137,224)",
+    )
+)
+fig3.add_trace(
+    go.Scatter(
+        x=data["yield_pcg"],
         y=data["tot_usd"],
         name="Total Rewards Today (USD)",
         line_color="rgb(86,203,167)",
