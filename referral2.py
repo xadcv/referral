@@ -123,7 +123,8 @@ lay1, lay2 = st.columns(2)
 lay1.plotly_chart(fig1)
 lay2.plotly_chart(fig2)
 
-st.subheader("Rewards (abs)")
+lay3, lay4 = st.columns(2)
+lay3.subheader("Rewards (abs)")
 
 fig3 = go.Figure()
 fig3.add_trace(
@@ -164,7 +165,7 @@ fig3.update_layout(
     yaxis_title="USD",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
-st.plotly_chart(fig3)
+lay3.plotly_chart(fig3)
 
 st.subheader("Payback period")
 
