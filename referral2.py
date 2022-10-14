@@ -132,7 +132,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_cash"],
-        name="Cash Rewards (bps)",
+        name="Cash Rewards (USD)",
         line_color="rgb(3,163,255)",
     )
 )
@@ -140,7 +140,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_ldo_usd12"],
-        name="LDO Rewards (bps)",
+        name="LDO Rewards (USD)",
         line_color="rgb(255,127,115)",
     )
 )
@@ -148,7 +148,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_usd"],
-        name="Total Rewards (bps)",
+        name="Total Rewards (USD)",
         line_color="rgb(86,203,167)",
     )
 )
@@ -156,7 +156,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_usd12"],
-        name="Total Rewards in 12mos (bps)",
+        name="Total Rewards in 12mos (USD)",
         line_color="rgb(255,227,53)",
     )
 )
