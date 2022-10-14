@@ -67,7 +67,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["cash_bonus_bps"],
-        name="Cash Rewards (bps)",
+        name="Cash Rewards Today (bps)",
         line_color="rgb(3,163,255)",
     )
 )
@@ -75,7 +75,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["ldo_bonus_bps"],
-        name="LDO Rewards (bps)",
+        name="LDO Rewards Today (bps)",
         line_color="rgb(255,127,115)",
     )
 )
@@ -83,7 +83,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_bps"],
-        name="Total Rewards (bps)",
+        name="Total Rewards Today (bps)",
         line_color="rgb(86,203,167)",
     )
 )
@@ -100,7 +100,7 @@ fig2.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_bps"],
-        name="Total Rewards (bps)",
+        name="Total Rewards Today (bps)",
         line_color="rgb(86,203,167)",
     )
 )
@@ -132,7 +132,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_cash"],
-        name="Cash Rewards (USD)",
+        name="Cash Rewards Today (USD)",
         line_color="rgb(3,163,255)",
     )
 )
@@ -140,7 +140,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_ldo_usd12"],
-        name="LDO Rewards (USD)",
+        name="LDO Rewards in 12mos (USD)",
         line_color="rgb(255,127,115)",
     )
 )
@@ -148,7 +148,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_usd"],
-        name="Total Rewards (USD)",
+        name="Total Rewards Today (USD)",
         line_color="rgb(86,203,167)",
     )
 )
