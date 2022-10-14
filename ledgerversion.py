@@ -28,7 +28,7 @@ st.write(
     "2. Long-term incentive baked in: If partnership is a success, even if yields compress, LDO could magnify referral bps if token appreciates"
 )
 st.write(
-    "3. Fully exposed to upside: If yields skyrocket, Ledger doesn't leave money on the table as ETH holders flock to deposit"
+    "3. Fully exposed to upside: If yields skyrocket, don't leave money on the table as ETH holders flock to deposit"
 )
 
 ref_cap = 25.0
