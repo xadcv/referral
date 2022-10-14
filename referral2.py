@@ -119,8 +119,9 @@ fig2.update_layout(
 )
 
 st.subheader("Rewards (bps)")
-st.plotly_chart(fig1)
-st.plotly_chart(fig2)
+lay1, lay2 = st.columns(2)
+lay1.plotly_chart(fig1)
+lay2.plotly_chart(fig2)
 
 st.subheader("Rewards (abs)")
 
