@@ -22,7 +22,7 @@ def human_format(num):
 st.title("Referral Simulation")
 st.subheader("Proposed partnership parameters:")
 st.write(
-    "- USD-based referral incentive equivalent to 1.5x LDO's annual take, which depends on overall staking yields"
+    "- USD-based referral incentive equivalent to 1.0x LDO's total annualized take upfront, which depends on overall staking yields"
 )
 st.write(
     "- Hard floor of 25bps paid out in 1-year vesting LDO tokens to make the difference in case yields come down"
@@ -58,7 +58,7 @@ new_ldo_price = st.slider(
     "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=10.0
 )
 
-eth_ref = st.number_input("Number of ETH Referred", min_value=0.0, value=1.0)
+eth_ref = st.number_input("Number of ETH Referred (in ETH)", min_value=0.0, value=1.0)
 
 
 data = pd.DataFrame({"yield_pcg": np.arange(0.0, 10.0, step=0.1)})
