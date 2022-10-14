@@ -185,7 +185,7 @@ fig4.add_trace(
         y=data["2yearPayback"],
         name="2-Year Payback",
         line_color="rgb(235,235,235)",
-        line_width="dot",
+        line_dash="dot",
     )
 )
 fig4.update_layout(
