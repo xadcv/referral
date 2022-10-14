@@ -167,7 +167,7 @@ fig3.update_layout(
 )
 lay3.plotly_chart(fig3)
 
-st.subheader("Payback period")
+lay4.subheader("Payback period")
 
 fig = go.Figure()
 fig.add_trace(
@@ -184,7 +184,7 @@ fig.update_layout(
     yaxis_title="yrs",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
-st.plotly_chart(fig)
+lay4.plotly_chart(fig)
 
 
 with st.expander("Data Table"):
