@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 
+st.set_page_config(layout="wide")
 
 LIDO = 5.0
 
