@@ -23,9 +23,9 @@ def human_format(num):
 st.title("Referral Simulation")
 st.subheader("Partnership parameters:")
 st.write(
-    "- Hard floor on 25bps in today's terms, LDO token payout is calculated at spot"
+    "1. Guaranteed minimum payout: Hard floor on 25bps in today's terms, LDO token payout is calculated at spot"
 )
-st.write("- ")
+st.write("2. Optimi")
 
 ref_cap = 25.0
 idx_take = 1.5
@@ -36,7 +36,7 @@ ldo_price = st.slider(
     "LDO Lock-in Price in (USD)", min_value=0.0, max_value=100.0, value=1.30
 )
 new_ldo_price = st.slider(
-    "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=1.30
+    "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=10
 )
 
 eth_ref = st.number_input("Number of ETH Referred", min_value=0.0, value=1.0)
@@ -117,12 +117,12 @@ fig2.update_layout(
 )
 
 st.subheader("Rewards (bps)")
-lay1, lay2 = st.columns(2)
-lay1.plotly_chart(fig1)
-lay2.plotly_chart(fig2)
 
-lay3, lay4 = st.columns(2)
-lay3.subheader("Rewards (abs)")
+st.plotly_chart(fig1)
+st.plotly_chart(fig2)
+
+
+st.subheader("Rewards (abs)")
 
 fig3 = go.Figure()
 fig3.add_trace(
@@ -163,36 +163,7 @@ fig3.update_layout(
     yaxis_title="USD",
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
-lay3.plotly_chart(fig3)
-
-lay4.subheader("Payback period")
-
-fig4 = go.Figure()
-fig4.add_trace(
-    go.Scatter(
-        x=data["yield_pcg"],
-        y=data["ldo_payback"],
-        name="Lido Payback (yrs)",
-        line_color="rgb(0,0,0)",
-    )
-)
-fig4.add_trace(
-    go.Scatter(
-        x=data["yield_pcg"],
-        y=data["2yearPayback"],
-        name="2-Year Payback",
-        line_color="rgb(247,137,223)",
-        line_dash="dot",
-    )
-)
-fig4.update_layout(
-    title="Lido Payback (yrs)",
-    xaxis_title="ETH Yield (%)",
-    yaxis_title="yrs",
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-)
-lay4.plotly_chart(fig4)
-
+st.plotly_chart(fig3)
 
 with st.expander("Data Table"):
     st.table(data)
