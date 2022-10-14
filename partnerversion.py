@@ -20,7 +20,14 @@ def human_format(num):
 
 
 st.title("Referral Simulation")
-st.subheader("Partnership parameters:")
+st.subheader("Proposed partnership parameters:")
+st.write(
+    "- USD-based referral incentive equivalent to 1.5x LDO's annual take, which depends on overall staking yields"
+)
+st.write(
+    "- Hard floor of 25bps paid out in 1-year vesting LDO tokens to make the difference in case yields come down"
+)
+st.subheader("Benefits for Partner & LDO:")
 st.write(
     "1. Guaranteed minimum payout: Hard floor on 25bps in today's terms, LDO token payout is calculated at spot"
 )
@@ -30,9 +37,17 @@ st.write(
 st.write(
     "3. Fully exposed to upside: If yields skyrocket, don't leave money on the table as ETH holders flock to deposit"
 )
+st.write(
+    "4. USD-denominated: Variable component is easy to measure, paid out in spot currencies including stablecoins"
+)
+st.write(
+    "5. Well aligned incentives: Sum-expanding vs zero-sum, partners are incentivized to keep each other happy and grow the pie"
+)
 
 ref_cap = 25.0
 idx_take = 1.5
+
+st.subheader("Modifiers")
 
 eth_price = st.slider("ETH Price in USD", min_value=0.0, max_value=5000.0, value=1300.0)
 
@@ -67,7 +82,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["cash_bonus_bps"],
-        name="Cash Rewards (bps)",
+        name="Cash Rewards Today (bps)",
         line_color="rgb(3,163,255)",
     )
 )
@@ -75,7 +90,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["ldo_bonus_bps"],
-        name="LDO Rewards (bps)",
+        name="LDO Rewards Today (bps)",
         line_color="rgb(255,127,115)",
     )
 )
@@ -83,7 +98,7 @@ fig1.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_bps"],
-        name="Total Rewards (bps)",
+        name="Total Rewards Today (bps)",
         line_color="rgb(86,203,167)",
     )
 )
@@ -100,7 +115,7 @@ fig2.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_bps"],
-        name="Total Rewards (bps)",
+        name="Total Rewards Today (bps)",
         line_color="rgb(86,203,167)",
     )
 )
@@ -125,7 +140,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_cash"],
-        name="Cash Rewards (USD)",
+        name="Cash Rewards Today (USD)",
         line_color="rgb(3,163,255)",
     )
 )
@@ -133,7 +148,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_ldo_usd12"],
-        name="LDO Rewards (USD)",
+        name="LDO Rewards Today (USD)",
         line_color="rgb(255,127,115)",
     )
 )
@@ -141,7 +156,7 @@ fig3.add_trace(
     go.Scatter(
         x=data["yield_pcg"],
         y=data["tot_usd"],
-        name="Total Rewards (USD)",
+        name="Total Rewards Today (USD)",
         line_color="rgb(86,203,167)",
     )
 )
