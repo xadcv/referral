@@ -25,7 +25,12 @@ st.subheader("Partnership parameters:")
 st.write(
     "1. Guaranteed minimum payout: Hard floor on 25bps in today's terms, LDO token payout is calculated at spot"
 )
-st.write("2. Optimi")
+st.write(
+    "2. Long-term incentive baked in: If partnership is a success, even if yields compress, LDO could magnify referral bps if token appreciates"
+)
+st.write(
+    "3. Fully exposed to upside: If yields skyrocket, Ledger doesn't leave money on the table as ETH holders flock to deposit"
+)
 
 ref_cap = 25.0
 idx_take = 1.5
@@ -36,7 +41,7 @@ ldo_price = st.slider(
     "LDO Lock-in Price in (USD)", min_value=0.0, max_value=100.0, value=1.30
 )
 new_ldo_price = st.slider(
-    "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=10
+    "LDO price in 12mos (USD)", min_value=0.0, max_value=100.0, value=10.0
 )
 
 eth_ref = st.number_input("Number of ETH Referred", min_value=0.0, value=1.0)
@@ -57,7 +62,6 @@ data["tot_usd"] = data["tot_ldo_usd"] + data["tot_cash"]
 data["tot_ldo_usd12"] = data["tot_ldo"] * new_ldo_price
 data["tot_usd12"] = data["tot_ldo_usd12"] + data["tot_cash"]
 data["tot_usd12_bps"] = data["tot_usd12"] / (eth_ref * eth_price) * 10000
-data["2yearPayback"] = 2
 
 fig1 = go.Figure()
 fig1.add_trace(
