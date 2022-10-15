@@ -6,6 +6,9 @@ import plotly.graph_objects as go
 
 LIDO = 5.0
 
+ref_cap = 35.0
+idx_take = 1.5
+
 
 def human_format(num):
     num = float("{:.3g}".format(num))
@@ -22,10 +25,10 @@ def human_format(num):
 st.title("Referral Simulation")
 st.subheader("Proposed partnership parameters:")
 st.write(
-    "- USD-based referral incentive equivalent to 1.0x LDO's total annualized take upfront, which depends on overall staking yields"
+    f"- USD-based referral incentive equivalent to {idx_take:.1f}x LDO's total annualized take upfront, which depends on overall staking yields"
 )
 st.write(
-    "- Hard floor of 25bps paid out in 1-year vesting LDO tokens to make the difference in case yields come down"
+    f"- Hard floor of {ref_cap:.1f}bps paid out in 1-year vesting LDO tokens to make the difference in case yields come down"
 )
 st.subheader("Benefits for Partner & LDO:")
 st.write(
@@ -44,8 +47,6 @@ st.write(
     "5. Well aligned incentives: Sum-expanding vs zero-sum, partners are incentivized to keep each other happy and grow the pie"
 )
 
-ref_cap = 25.0
-idx_take = 1.0
 
 st.subheader("Modifiers")
 
