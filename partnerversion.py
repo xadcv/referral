@@ -25,7 +25,7 @@ def human_format(num):
 st.title("Referral Simulation")
 st.subheader("Proposed partnership parameters:")
 st.write(
-    f"- USD-based referral incentive equivalent to {idx_take:.1f}x LDO's total annualized take upfront, which depends on overall staking yields"
+    f"- USD-based referral incentive equivalent to {idx_take:.2f}x LDO's total annualized take upfront, which depends on overall staking yields"
 )
 st.write(
     f"- Hard floor of {ref_cap:.1f}bps paid out in 1-year vesting LDO tokens to make the difference in case yields come down"
