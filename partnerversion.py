@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 LIDO = 5.0
 
 ref_cap = 45.0
-idx_take = 1.5
+idx_take = 1.25
 
 
 def human_format(num):
