@@ -6,8 +6,8 @@ import plotly.graph_objects as go
 
 LIDO = 5.0
 
-ref_cap = 35.0
-idx_take = 1.5
+ref_cap = 45.0
+idx_take = 1.25
 
 
 def human_format(num):
@@ -32,7 +32,7 @@ st.write(
 )
 st.subheader("Benefits for Partner & LDO:")
 st.write(
-    "1. Guaranteed minimum payout: Hard floor on 25bps in today's terms, LDO token payout is calculated at spot"
+    "1. Guaranteed minimum payout: Hard floor on {ref_cap:.1f}bps in today's terms, LDO token payout is calculated at spot"
 )
 st.write(
     "2. Long-term incentive baked in: If partnership is a success, even if yields compress, LDO could magnify referral bps if token appreciates"
